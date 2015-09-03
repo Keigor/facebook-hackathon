@@ -2,6 +2,7 @@ from flask import Flask
 from flask import send_from_directory
 from flask import request
 from flask import jsonify
+from flask import redirect
 from twitter import Twitter
 from instoosh import Instoosh
 from sentiment_analyzer import classifyTweets
@@ -67,6 +68,10 @@ def crossdomain(origin=None, methods=None, headers=None,
         f.provide_automatic_options = False
         return update_wrapper(wrapped_function, f)
     return decorator
+   
+@app.route('/')
+def index():
+	return redirect('index.html')
 
 @app.route('/<path:path>', methods=['GET'])
 @crossdomain(origin='*')

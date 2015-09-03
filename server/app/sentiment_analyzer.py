@@ -18,7 +18,7 @@ for row in inpTweets:
     legacyAnalyzer.featureList.extend(featureVector)
 # Remove featureList duplicates
 featureList = list(set(legacyAnalyzer.featureList))
-clFile = open(root_path + '/trained', "rb")
+clFile = open(root_path + '/trained', "r")
 NBClassifier = pickle.load(clFile)
 clFile.close()
 # NBClassifier.show_most_informative_features(300)
