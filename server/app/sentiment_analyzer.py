@@ -18,7 +18,7 @@ for row in inpTweets:
     legacyAnalyzer.featureList.extend(featureVector)
 # Remove featureList duplicates
 featureList = list(set(legacyAnalyzer.featureList))
-clFile = open(root_path + '/naivebayes_trained_model.pickle', "r")
+clFile = open(root_path + '/trained', "rb")
 NBClassifier = pickle.load(clFile)
 clFile.close()
 # NBClassifier.show_most_informative_features(300)
@@ -44,7 +44,7 @@ def classifyTweet(tweet):
 #     print "tweet = %s, sentiment = %s\n" % (tweet, sentiment)
     return sentiment
     
-clToScore = {"positive": 1, "neutral": 0, "negative":-1}
+clToScore = {"positive": 4, "neutral": 2, "negative":0}
     
 def classifyTweets(tweets):
     
