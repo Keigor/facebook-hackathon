@@ -1,6 +1,6 @@
 # todo
 import csv
-import pickle
+import cPickle as pickle
 from legacyAnalyzer import getFeatureVector, getStopWordList, processTweet, extract_features
 import legacyAnalyzer
 import os
@@ -18,7 +18,8 @@ for row in inpTweets:
     legacyAnalyzer.featureList.extend(featureVector)
 # Remove featureList duplicates
 featureList = list(set(legacyAnalyzer.featureList))
-clFile = open(root_path + '/trained', "r")
+# clFile = open(root_path + '/trained', "r")
+clFile = open(root_path + '/naivebayes_trained_model.pickle', "r")
 NBClassifier = pickle.load(clFile)
 clFile.close()
 # NBClassifier.show_most_informative_features(300)
