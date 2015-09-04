@@ -7,10 +7,11 @@
   <md-progress-circular style="margin: 20px auto;" ng-show="main.spin" class="md-hue-2" md-mode="indeterminate">
   </md-progress-circular>
   <md-whiteframe class="md-whiteframe-z3" layout
-   ng-repeat="place in main.places | orderBy: ['-rating', '+distance']">
+   ng-repeat="place in main.places | orderBy: ['-rating', '+distance']"
+   ng-click="main.showDialog($event, place)">
    <div class="insta_bg"
-   ng-if="place.$photos && place.$photos.length > 0"
-   ng-style="{'background-image':'url({{ place.$photos[0] }})'}">
+   ng-if="place.$photos && place.$photos.length > 0 || place.bg_url"
+   ng-style="{'background-image':'url({{ place.bg_url || place.$photos[0] }})'}">
    </div>
     <md-card-content>
       <h2 class="md-title">{{ place.name }}</h2>

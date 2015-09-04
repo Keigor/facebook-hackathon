@@ -97,6 +97,27 @@ md-progress-linear.md-default-theme {
   opacity: 0.9;
 }
 
+md-bottom-sheet.md-grid {
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 0;
+}
+
+md-backdrop.md-opaque.md-bottom-sheet-backdrop.ng-scope.md-default-theme {
+    background-color: rgba(33,33,33,0.48);
+}
+md-backdrop {
+  position: fixed;
+}
+
+.md-grid-item-content {
+  height: 96px; }
+.md-grid-item-content md-icon {
+  height: 48px;
+  width: 48px; }
+.md-grid-text {
+  padding-bottom: 5px; }
+
 /**
  *  Do not remove this comments bellow. It's the markers used by gulp-inject to inject
  *  all your sass files automatically

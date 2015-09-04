@@ -6,7 +6,7 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController(googlePlaces, places, $interval) {
+  function MainController(googlePlaces, places, $interval, $mdBottomSheet) {
     var vm = this;
     vm.places = [];
     // Search for places based geo location
@@ -48,6 +48,26 @@
           pl.$photos = ins_details.photos;
           pl.$posts = ins_details.posts;
         });
+    };
+
+    vm.alert = ''
+    vm.showDialog = function($event, place) {
+      vm.alert = '';
+      $mdBottomSheet.show({
+        templateUrl: 'app/main/bottom-sheet-list-template.html',
+        controller: ['$scope', '$mdBottomSheet', '$sce',function($scope, $mdBottomSheet, $sce) {
+          $scope.place = place;
+          console.log(place)
+          $scope.listItemClick = function($index) {
+            var clickedItem = $scope.items[$index];
+            $mdBottomSheet.hide(clickedItem);
+          };
+        }],
+        targetEvent: $event
+      })
+      .then(function(clickedItem) {
+        vm.alert = clickedItem.name + ' clicked!';
+      });
     };
   }
 })();
