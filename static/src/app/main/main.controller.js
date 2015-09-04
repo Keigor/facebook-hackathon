@@ -50,14 +50,13 @@
         });
     };
 
-    vm.alert = ''
+    vm.alert = '';
     vm.showDialog = function($event, place) {
       vm.alert = '';
       $mdBottomSheet.show({
         templateUrl: 'app/main/bottom-sheet-list-template.html',
-        controller: ['$scope', '$mdBottomSheet', '$sce',function($scope, $mdBottomSheet, $sce) {
+        controller: ['$scope', '$mdBottomSheet',function($scope, $mdBottomSheet) {
           $scope.place = place;
-          console.log(place)
           $scope.listItemClick = function($index) {
             var clickedItem = $scope.items[$index];
             $mdBottomSheet.hide(clickedItem);

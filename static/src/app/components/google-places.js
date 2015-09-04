@@ -37,7 +37,7 @@
                 p.rating = 0;
                 p.bg_url = p.photos && p.photos.length > 0
                   ? p.photos[0].getUrl({'maxWidth': 500, 'maxHeight': 500})
-                  : undefined
+                  : undefined;
                 p.mapUrl = 'https://www.google.com/maps/@' +
                 p.geometry.location.G +',' + p.geometry.location.K +',17z';
                 // Do it the background
@@ -46,7 +46,7 @@
                     p.phone = details.formatted_phone_number;
                     p.website = details.website;
                   }
-                })
+                });
                 return p;
               }));
           }
