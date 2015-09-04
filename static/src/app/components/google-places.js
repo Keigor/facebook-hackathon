@@ -23,7 +23,7 @@
           service.nearbySearch({
             language: 'en',
             location: latlng,
-            radius: '500',                    // TODO:
+            radius: '900',                   // TODO:
             types: ['bars', 'restaurant']     // Move to config or based arguments
           }, onSuccess);
           function onSuccess(places, status) {

@@ -12,7 +12,7 @@
       </a>
     </md-list-item>
     <md-list-item ng-if="place.website">
-      <a ng-href="{{ place.website }}">
+      <a ng-href="{{ place.website }}" target="_blank">
       <md-button ng-if="place.website" class="md-list-item-content">
         <i class="fa fa-globe"></i>
         <span class="md-inline-list-icon-label">{{ place.website }}</span>
@@ -22,7 +22,7 @@
     <md-list-item ng-if="place.phone">
       <md-button class="md-list-item-content">
         <i class="fa fa-phone"></i>
-        <span type="tel" class="md-inline-list-icon-label">{{ place.phone }}</span>
+        <button type="tel" class="md-inline-list-icon-label">{{ place.phone }}</button>
       </md-button>
     </md-list-item>
   </md-list>

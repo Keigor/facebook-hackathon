@@ -16,9 +16,24 @@
     <md-card-content>
       <h2 class="md-title">{{ place.name }}</h2>
       <p class="md-body-1"><b>{{ place.distance | number: 0 }}</b> meters from you</p>
-      <p class="md-body-1" ng-show="place.dValue == 100 && place.rating > 0">{{ place.rating }} stars</p>
+      <p class="md-body-1" ng-show="place.dValue == 100 && place.rating > 0">
+        <i style="color: #FFA41C; text-shadow: 0px 1px 0 #AA6600;"
+        ng-class="{ 'animated infinite rubberBand': !$index }"
+        ng-style="{'font-size': !$index ? '24px' : '18px'}"
+        class="fa fa-star"></i>
+        {{ place.rating }}
+      </p>
       <img class="img-type" ng-src="{{ place.icon }}" />
     </md-card-content>
     <md-progress-linear md-mode="determinate" ng-show="place.dValue >= 0" value="{{ place.dValue || 0 }}"></md-progress-linear>
   </md-whiteframe>
+
+  <div style="width: 100%; font-size: 101px;
+  height: 500px; text-align: center;
+  color: rgba(0,0,0,0.1); text-shadow: rgb(255, 255, 255) 5px 1px 0px;">
+    <h2 style="font-size: 60px;margin-bottom: 0;margin-top: 31%;">Trends</h2>
+    <i class="fa fa-users"></i>
+    <i class="fa fa-map-pin"></i>
+    <i class="fa fa-beer"></i>
+  </div>
 </div>

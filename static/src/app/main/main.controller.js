@@ -42,7 +42,7 @@
 
     // Fill photos for each place
     vm.fillPhotos = function(pl) {
-      var pname = pl.name.replace(/ /g, '').toLowerCase();
+      var pname = pl.name.replace(/ |-/g, '').toLowerCase();
       places.getPhotos(pname, [pl.geometry.location.G, pl.geometry.location.K].join(','))
         .then(function(ins_details) {
           pl.$photos = ins_details.photos;
