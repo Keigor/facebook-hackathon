@@ -4,7 +4,7 @@
   </md-subheader>
   <md-list>
     <md-list-item ng-if="place.vicinity">
-      <a ng-href="place.mapUrl">
+      <a ng-href="{{ place.mapUrl }}">
         <md-button ng-if="place.vicinity" class="md-list-item-content">
         <i class="fa fa-map"></i>
         <span class="md-inline-list-icon-label">{{ place.vicinity }}</span>
@@ -12,7 +12,7 @@
       </a>
     </md-list-item>
     <md-list-item ng-if="place.website">
-      <a ng-href="place.website">
+      <a ng-href="{{ place.website }}">
       <md-button ng-if="place.website" class="md-list-item-content">
         <i class="fa fa-globe"></i>
         <span class="md-inline-list-icon-label">{{ place.website }}</span>
@@ -20,7 +20,7 @@
     </a>
     </md-list-item>
     <md-list-item ng-if="place.phone">
-      <md-button ng-if="place.website" class="md-list-item-content">
+      <md-button class="md-list-item-content">
         <i class="fa fa-phone"></i>
         <span type="tel" class="md-inline-list-icon-label">{{ place.phone }}</span>
       </md-button>
